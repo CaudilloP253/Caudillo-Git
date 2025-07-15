@@ -1,0 +1,64 @@
+$light--bgColor: #6168FF;
+$light--fontColor:#fff;
+$dark--bgColor: #dddee9;
+$dark--fontColor:#41346f;
+$light--linkColor:#2831dd;
+$dark--linkColor:rgba(189, 130, 232, 0.533);
+
+@mixin hover__nav{
+    cursor: pointer;
+        &:hover {
+           transform: scale(1.07);
+        }
+}
+
+@mixin img__product--size{
+    width: 320px;
+    height: 320px;
+}
+@mixin laptops {
+    @media screen and (max-width:70rem) { @content };
+}
+
+
+%logo--size {
+    width: 20rem;
+}
+@media screen and (max-width:768px) {
+    header{
+        display: flex;
+        flex-direction: row;
+        .header__logo{
+        justify-items: center;
+        }
+        .header--row{
+            display: block;
+        }
+        .header__link{
+            justify-content: space-around;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            min-width: auto;
+        }
+    }
+    a{
+        font-size: .5em;
+    }
+    .section__item{
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+    }
+}
+@media (prefers-color-scheme: dark) {
+    *{
+        background-color: $dark--fontColor;
+    }
+    h1{
+        background-color: $dark--bgColor;
+        color: $dark--fontColor;
+    }
+    header a, footer a{
+        color: $dark--linkColor;
+    }
+}
